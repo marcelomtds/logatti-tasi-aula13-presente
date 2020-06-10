@@ -8,11 +8,16 @@ namespace Aula13Presente
     public partial class PresenteForm : System.Web.UI.Page
     {
         PresentePersistence presentePersistence = new PresentePersistence();
+        TipoPersistence tipoPersistence = new TipoPersistence();
+        MarcaPersistence marcaPersistence = new MarcaPersistence();
+        FinalidadePersistence finalidadePersistence = new FinalidadePersistence();
+        FornecedorPersistence fornecedorPersistence = new FornecedorPersistence();
         private static readonly string MSG_REQUIRED_FIELDS = "Campos obrigatórios não preenchidos.";
         private static readonly string MSG_CREATION_SUCCESS = "Presente salvo com sucesso.";
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadGridView();
+            LoadCombos();
             txtDescricao.Focus();
         }
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -25,16 +30,32 @@ namespace Aula13Presente
             {
                 try
                 {
+                    Tipo tipo = new Tipo()
+                    {
+                        Id = int.Parse(ddlTipo.SelectedValue)
+                    };
+                    Marca marca = new Marca()
+                    {
+                        Id = int.Parse(ddlMarca.SelectedValue)
+                    };
+                    Finalidade finalidade = new Finalidade()
+                    {
+                        Id = int.Parse(ddlFinalidade.SelectedValue)
+                    };
+                    Fornecedor fornecedor = new Fornecedor()
+                    {
+                        Id = int.Parse(ddlFornecedor.SelectedValue)
+                    };
                     Presente presente = new Presente()
                     {
                         Descricao = txtDescricao.Text,
-                        Tipo = txtTipo.Text,
-                        Marca = txtMarca.Text,
-                        Finalidade = txtFinalidade.Text,
+                        Tipo = tipo,
+                        Marca = marca,
+                        Finalidade = finalidade,
                         Cor = txtCor.Text,
-                        Tamanho = txtTamanho.Text,
+                        Tamanho = decimal.Parse(txtTamanho.Text),
                         Preco = decimal.Parse(txtPreco.Text),
-                        NomeFornecedor = txtNomeFornecedor.Text
+                        Fornecedor = fornecedor
                     };
                     presentePersistence.Create(presente);
                     SendMessage(MSG_CREATION_SUCCESS, Color.Green);
@@ -60,24 +81,24 @@ namespace Aula13Presente
         private bool IsInvalidForm()
         {
             return string.IsNullOrWhiteSpace(txtDescricao.Text)
-                || string.IsNullOrWhiteSpace(txtTipo.Text)
-                || string.IsNullOrWhiteSpace(txtMarca.Text)
-                || string.IsNullOrWhiteSpace(txtFinalidade.Text)
+                || string.IsNullOrWhiteSpace(ddlTipo.SelectedValue)
+                || string.IsNullOrWhiteSpace(ddlMarca.SelectedValue)
+                || string.IsNullOrWhiteSpace(ddlFinalidade.SelectedValue)
                 || string.IsNullOrWhiteSpace(txtCor.Text)
                 || string.IsNullOrWhiteSpace(txtTamanho.Text)
                 || string.IsNullOrWhiteSpace(txtPreco.Text)
-                || string.IsNullOrWhiteSpace(txtNomeFornecedor.Text);
+                || string.IsNullOrWhiteSpace(ddlFornecedor.SelectedValue);
         }
         private void ClearForm()
         {
             txtDescricao.Text = String.Empty;
-            txtTipo.Text = String.Empty;
-            txtMarca.Text = String.Empty;
-            txtFinalidade.Text = String.Empty;
+            ddlTipo.SelectedValue = null;
+            ddlMarca.SelectedValue = null;
+            ddlFinalidade.SelectedValue = null;
             txtCor.Text = String.Empty;
             txtTamanho.Text = String.Empty;
             txtPreco.Text = String.Empty;
-            txtNomeFornecedor.Text = String.Empty;
+            ddlFornecedor.SelectedValue = null;
             txtDescricao.Focus();
         }
         private void SendMessage(string message, Color color)
@@ -85,6 +106,28 @@ namespace Aula13Presente
             lblMensagem.Text = message;
             lblMensagem.ForeColor = color;
             lblMensagem.Font.Bold = true;
+        }
+        private void LoadCombos()
+        {
+            ddlTipo.DataSource = tipoPersistence.FindAll();
+            ddlTipo.DataTextField = "descricao";
+            ddlTipo.DataValueField = "Id";
+            ddlTipo.DataBind();
+
+            ddlMarca.DataSource = marcaPersistence.FindAll();
+            ddlMarca.DataTextField = "descricao";
+            ddlMarca.DataValueField = "Id";
+            ddlMarca.DataBind();
+
+            ddlFinalidade.DataSource = finalidadePersistence.FindAll();
+            ddlFinalidade.DataTextField = "descricao";
+            ddlFinalidade.DataValueField = "Id";
+            ddlFinalidade.DataBind();
+
+            ddlFornecedor.DataSource = fornecedorPersistence.FindAll();
+            ddlFornecedor.DataTextField = "nome";
+            ddlFornecedor.DataValueField = "Id";
+            ddlFornecedor.DataBind();
         }
     }
 }

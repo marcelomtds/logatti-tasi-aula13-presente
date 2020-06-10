@@ -78,13 +78,13 @@ namespace Aula13Presente
         protected global::System.Web.UI.WebControls.Label lblTipo;
 
         /// <summary>
-        /// Controle txtTipo.
+        /// Controle ddlTipo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipo;
 
         /// <summary>
         /// Controle lblMarca.
@@ -96,13 +96,13 @@ namespace Aula13Presente
         protected global::System.Web.UI.WebControls.Label lblMarca;
 
         /// <summary>
-        /// Controle txtMarca.
+        /// Controle ddlMarca.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMarca;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMarca;
 
         /// <summary>
         /// Controle lblFinalidade.
@@ -114,13 +114,31 @@ namespace Aula13Presente
         protected global::System.Web.UI.WebControls.Label lblFinalidade;
 
         /// <summary>
-        /// Controle txtFinalidade.
+        /// Controle ddlFinalidade.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFinalidade;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFinalidade;
+
+        /// <summary>
+        /// Controle lblFornecedor.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFornecedor;
+
+        /// <summary>
+        /// Controle ddlFornecedor.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlFornecedor;
 
         /// <summary>
         /// Controle lblCor.
@@ -175,24 +193,6 @@ namespace Aula13Presente
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreco;
-
-        /// <summary>
-        /// Controle lblNomeFornecedor.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNomeFornecedor;
-
-        /// <summary>
-        /// Controle txtNomeFornecedor.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeFornecedor;
 
         /// <summary>
         /// Controle btnSalvar.

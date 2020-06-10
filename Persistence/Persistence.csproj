@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FinalidadePersistence.cs" />
+    <Compile Include="FornecedorPersistence.cs" />
+    <Compile Include="MarcaPersistence.cs" />
     <Compile Include="PresentePersistence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoPersistence.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Connection\Connection.csproj">
