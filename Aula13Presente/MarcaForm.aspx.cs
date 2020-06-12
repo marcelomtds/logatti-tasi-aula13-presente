@@ -6,9 +6,9 @@ using Util;
 
 namespace Aula13Presente
 {
-    public partial class TipoForm : System.Web.UI.Page
+    public partial class MarcaForm : System.Web.UI.Page
     {
-        TipoPersistence tipoPersistence = new TipoPersistence();
+        MarcaPersistence marcaPersistence = new MarcaPersistence();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -27,11 +27,11 @@ namespace Aula13Presente
             {
                 try
                 {
-                    Tipo tipo = new Tipo()
+                    Marca marca = new Marca()
                     {
                         Descricao = txtDescricao.Text
                     };
-                    tipoPersistence.Create(tipo);
+                    marcaPersistence.Create(marca);
                     SendMessage(Message.MSG_CREATION_SUCCESS, Color.Green);
                     LoadGridView();
                     ClearForm();
@@ -49,7 +49,7 @@ namespace Aula13Presente
         }
         private void LoadGridView()
         {
-            gvResult.DataSource = tipoPersistence.FindAll();
+            gvResult.DataSource = marcaPersistence.FindAll();
             gvResult.DataBind();
         }
         private bool IsInvalidForm()

@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PresenteForm.aspx.cs" Inherits="Aula13Presente.PresenteForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FinalidadeForm.aspx.cs" Inherits="Aula13Presente.FinalidadeForm" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,56 +45,16 @@
                         <asp:TextBox class="form-control" ReadOnly="true" ID="txtId" runat="server"></asp:TextBox>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-5">
                     <div class="form-group">
                         <asp:Label ID="lblDescricao" runat="server" Text="*Descrição:"></asp:Label>
                         <asp:TextBox class="form-control" MaxLength="100" ID="txtDescricao" runat="server"></asp:TextBox>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-5">
                     <div class="form-group">
-                        <asp:Label ID="lblTipo" runat="server" Text="*Tipo:"></asp:Label>
-                        <asp:DropDownList class="form-control" ID="ddlTipo" runat="server"></asp:DropDownList>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <div class="form-group">
-                        <asp:Label ID="lblMarca" runat="server" Text="*Marca:"></asp:Label>
-                        <asp:DropDownList class="form-control" ID="ddlMarca" runat="server"></asp:DropDownList>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="form-group">
-                        <asp:Label ID="lblFinalidade" runat="server" Text="*Finalidade:"></asp:Label>
-                        <asp:DropDownList class="form-control" ID="ddlFinalidade" runat="server"></asp:DropDownList>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="form-group">
-                        <asp:Label ID="lblFornecedor" runat="server" Text="*Fornecedor:"></asp:Label>
-                        <asp:DropDownList class="form-control" ID="ddlFornecedor" runat="server"></asp:DropDownList>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <div class="form-group">
-                        <asp:Label ID="lblCor" runat="server" Text="*Cor:"></asp:Label>
-                        <asp:TextBox class="form-control" MaxLength="30" ID="txtCor" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="form-group">
-                        <asp:Label ID="lblTamanho" runat="server" Text="*Tamanho:"></asp:Label>
-                        <asp:TextBox class="form-control" MaxLength="30" ID="txtTamanho" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="form-group">
-                        <asp:Label ID="lblPreco" runat="server" Text="*Preço:"></asp:Label>
-                        <asp:TextBox class="form-control" MaxLength="8" ID="txtPreco" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblOrigem" runat="server" Text="*Origem:"></asp:Label>
+                        <asp:TextBox class="form-control" MaxLength="100" ID="txtOrigem" runat="server"></asp:TextBox>
                     </div>
                 </div>
             </div>
@@ -103,7 +64,6 @@
                         <asp:Button class="btn btn-success" ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
                         <asp:Button class="btn btn-primary" ID="btnLimpar" runat="server" Text="Limpar" OnClick="btnLimpar_Click" />
                     </div>
-
                 </div>
             </div>
             <div class="table-responsive">
@@ -111,13 +71,7 @@
                     <Columns>
                         <asp:BoundField DataField="Id" HeaderText="ID" />
                         <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
-                        <asp:BoundField DataField="Tamanho" HeaderText="Tamanho" />
-                        <asp:BoundField DataField="Cor" HeaderText="Cor" />
-                        <asp:BoundField DataField="Preco" HeaderText="Preço" />
-                        <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
-                        <asp:BoundField DataField="Marca" HeaderText="Marca" />
-                        <asp:BoundField DataField="Finalidade" HeaderText="Finalidade" />
-                        <asp:BoundField DataField="Fornecedor" HeaderText="Fornecedor" />
+                        <asp:BoundField DataField="Origem" HeaderText="Origem" />
                     </Columns>
                 </asp:GridView>
             </div>

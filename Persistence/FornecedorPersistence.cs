@@ -58,7 +58,7 @@ namespace Persistence
                     Numero = reader["numero"].ToString(),
                     Cnpj = reader["cnpj"].ToString(),
                     Email = reader["email"].ToString(),
-                    ContaCorrente = reader["nome"].ToString(),
+                    ContaCorrente = reader["conta_corrente"].ToString(),
                     Agencia = reader["agencia"].ToString(),
                     Banco = reader["banco"].ToString()
                 };

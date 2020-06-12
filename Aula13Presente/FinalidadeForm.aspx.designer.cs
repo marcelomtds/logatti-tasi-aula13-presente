@@ -11,7 +11,7 @@ namespace Aula13Presente
 {
 
 
-    public partial class TipoForm
+    public partial class FinalidadeForm
     {
 
         /// <summary>
@@ -67,6 +67,24 @@ namespace Aula13Presente
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescricao;
+
+        /// <summary>
+        /// Controle lblOrigem.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrigem;
+
+        /// <summary>
+        /// Controle txtOrigem.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOrigem;
 
         /// <summary>
         /// Controle btnSalvar.

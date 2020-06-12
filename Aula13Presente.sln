@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connection", "Connection\Connection.csproj", "{B1A9E823-B9A3-4226-AA27-8A092150DA68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "Util\Util.csproj", "{BE956DD4-BEC5-4E2E-8257-D986C934D271}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B1A9E823-B9A3-4226-AA27-8A092150DA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A9E823-B9A3-4226-AA27-8A092150DA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A9E823-B9A3-4226-AA27-8A092150DA68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE956DD4-BEC5-4E2E-8257-D986C934D271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE956DD4-BEC5-4E2E-8257-D986C934D271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE956DD4-BEC5-4E2E-8257-D986C934D271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE956DD4-BEC5-4E2E-8257-D986C934D271}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,7 +11,7 @@ namespace Aula13Presente
 {
 
 
-    public partial class TipoForm
+    public partial class MarcaForm
     {
 
         /// <summary>

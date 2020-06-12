@@ -69,12 +69,36 @@
   <ItemGroup>
     <Content Include="CreateTable.sql" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="FinalidadeForm.aspx" />
+    <Content Include="FornecedorForm.aspx" />
+    <Content Include="MarcaForm.aspx" />
     <Content Include="PresenteForm.aspx" />
     <Content Include="script\bootstrap.js" />
     <Content Include="TipoForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FinalidadeForm.aspx.cs">
+      <DependentUpon>FinalidadeForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalidadeForm.aspx.designer.cs">
+      <DependentUpon>FinalidadeForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FornecedorForm.aspx.cs">
+      <DependentUpon>FornecedorForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FornecedorForm.aspx.designer.cs">
+      <DependentUpon>FornecedorForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarcaForm.aspx.cs">
+      <DependentUpon>MarcaForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarcaForm.aspx.designer.cs">
+      <DependentUpon>MarcaForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PresenteForm.aspx.cs">
       <DependentUpon>PresenteForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +132,10 @@
     <ProjectReference Include="..\Persistence\Persistence.csproj">
       <Project>{60C9782A-A307-4DAD-830E-DBF908723D02}</Project>
       <Name>Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{BE956DD4-BEC5-4E2E-8257-D986C934D271}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -2,6 +2,7 @@
 using System.Drawing;
 using Domain;
 using Persistence;
+using Util;
 
 namespace Aula13Presente
 {
@@ -12,19 +13,20 @@ namespace Aula13Presente
         MarcaPersistence marcaPersistence = new MarcaPersistence();
         FinalidadePersistence finalidadePersistence = new FinalidadePersistence();
         FornecedorPersistence fornecedorPersistence = new FornecedorPersistence();
-        private static readonly string MSG_REQUIRED_FIELDS = "Campos obrigatórios não preenchidos.";
-        private static readonly string MSG_CREATION_SUCCESS = "Presente salvo com sucesso.";
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadGridView();
-            LoadCombos();
-            txtDescricao.Focus();
+            if (!IsPostBack)
+            {
+                LoadGridView();
+                LoadCombos();
+                txtDescricao.Focus();
+            }
         }
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             if (IsInvalidForm())
             {
-                SendMessage(MSG_REQUIRED_FIELDS, Color.Red);
+                SendMessage(Message.MSG_REQUIRED_FIELDS, Color.Red);
             }
             else
             {
@@ -58,13 +60,13 @@ namespace Aula13Presente
                         Fornecedor = fornecedor
                     };
                     presentePersistence.Create(presente);
-                    SendMessage(MSG_CREATION_SUCCESS, Color.Green);
+                    SendMessage(Message.MSG_CREATION_SUCCESS, Color.Green);
                     LoadGridView();
                     ClearForm();
                 }
                 catch (Exception ex)
                 {
-                    SendMessage($"Ocorreu um Erro: {ex.Message}", Color.Red);
+                    SendMessage($"{Message.MSG_ERROR} {ex.Message}", Color.Red);
                 }
             }
         }
@@ -75,8 +77,9 @@ namespace Aula13Presente
         }
         private void LoadGridView()
         {
-            gvPresentes.DataSource = presentePersistence.FindAll();
-            gvPresentes.DataBind();
+            var list = presentePersistence.FindAll();
+            gvResult.DataSource = list;
+            gvResult.DataBind();
         }
         private bool IsInvalidForm()
         {

@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Drawing;
+using System.Web.UI.WebControls;
 using Domain;
 using Persistence;
 using Util;
 
 namespace Aula13Presente
 {
-    public partial class TipoForm : System.Web.UI.Page
+    public partial class FinalidadeForm : System.Web.UI.Page
     {
-        TipoPersistence tipoPersistence = new TipoPersistence();
+        FinalidadePersistence finalidadePersistence = new FinalidadePersistence();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -27,11 +28,12 @@ namespace Aula13Presente
             {
                 try
                 {
-                    Tipo tipo = new Tipo()
+                    Finalidade finalidade = new Finalidade()
                     {
-                        Descricao = txtDescricao.Text
+                        Descricao = txtDescricao.Text,
+                        Origem = txtOrigem.Text
                     };
-                    tipoPersistence.Create(tipo);
+                    finalidadePersistence.Create(finalidade);
                     SendMessage(Message.MSG_CREATION_SUCCESS, Color.Green);
                     LoadGridView();
                     ClearForm();
@@ -49,16 +51,18 @@ namespace Aula13Presente
         }
         private void LoadGridView()
         {
-            gvResult.DataSource = tipoPersistence.FindAll();
+            gvResult.DataSource = finalidadePersistence.FindAll();
             gvResult.DataBind();
         }
         private bool IsInvalidForm()
         {
-            return string.IsNullOrWhiteSpace(txtDescricao.Text);
+            return string.IsNullOrWhiteSpace(txtDescricao.Text) ||
+                   string.IsNullOrWhiteSpace(txtOrigem.Text);
         }
         private void ClearForm()
         {
             txtDescricao.Text = String.Empty;
+            txtOrigem.Text = String.Empty;
             txtDescricao.Focus();
         }
         private void SendMessage(string message, Color color)

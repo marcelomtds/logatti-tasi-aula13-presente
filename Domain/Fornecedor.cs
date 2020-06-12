@@ -14,5 +14,9 @@
         public string ContaCorrente { get; set; }
         public string Agencia { get; set; }
         public string Banco { get; set; }
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }
