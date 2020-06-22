@@ -51,7 +51,7 @@ namespace Persistence
                              "fo.agencia AS agencia_fornecedor, " +
                              "fo.banco AS banco_fornecedor " +
                           "FROM presente AS p " +
-                          "INNER JOIN tipo AS t ON t.id = p.id_fornecedor " +
+                          "INNER JOIN tipo AS t ON t.id = p.id_tipo " +
                           "INNER JOIN marca AS m ON m.id = p.id_marca " +
                           "INNER JOIN finalidade AS f ON f.id = p.id_finalidade " +
                           "INNER JOIN fornecedor AS fo ON fo.id = p.id_fornecedor " +
